@@ -10,15 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 
-int ft_isdigit (int c)
+int ft_tolower (int c)
 {
-		if (c >= 48 && c <= 57)
-		{
-			return 1;
-		}
-		else {
-			return 0;
-		}
+	int diferencia;
+
+	diferencia = 32;
+	if (c >= 65 && c <= 90)
+	{
+		c = c + diferencia;
+	}
+	return c;
 }

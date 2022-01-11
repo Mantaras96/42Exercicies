@@ -10,15 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 
-int ft_isdigit (int c)
+char *ft_strchr (const char *s, int c)
 {
-		if (c >= 48 && c <= 57)
-		{
-			return 1;
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c){
+			return (s[i]);
 		}
-		else {
-			return 0;
-		}
+		i++;
+	}
+	return NULL;
 }

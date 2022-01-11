@@ -10,15 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <stdlib.h>
 
-int ft_isdigit (int c)
+size_t ft_strlen (const char *s)
 {
-		if (c >= 48 && c <= 57)
-		{
-			return 1;
-		}
-		else {
-			return 0;
-		}
+	size_t i;
+
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	return i;
 }

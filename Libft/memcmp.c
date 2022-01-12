@@ -9,41 +9,27 @@
 /*   Updated: 2022/01/11 17:40:56 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
+#include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 
-char *ft_strchr (const char *s, int c)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char *str;
+	unsigned char	*s1_copy
+	unsigned char	*s2_copy
+	size_t	i;
 
-	str = (char *)s;
-	while (*str != c)
+	s1_copy = (unsigned char *)s1;
+	s2_copy = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
 	{
-		if (*str == '\0')
-		{
-			return (NULL);
-		}
-		str++;
+		if (s1_copy[i] != s2_copy[i])
+			return (s1_copy[i] - s2_copy[i])
+		i++;
 	}
-
-	return (str);
-}
-
-int main() {
-	const char str[] = "www.tutorialspoint.com";
-   const char ch = '.';\
-   	const char str2[] = "www.tutorialspoint.com";
-   const char ch2 = '.';
-   char *ret;
-   char *ret2;
-   ret = strchr(str, ch);
-
-   printf("String after |%c| is - |%s|\n", ch, ret);
-
-    ret2 = ft_strchr(str2, ch2);
-
-   printf("String after |%c| is - |%s|\n", ch2, ret2);
-
-
-
+	return (0);
 }

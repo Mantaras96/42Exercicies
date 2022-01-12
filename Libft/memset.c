@@ -9,41 +9,21 @@
 /*   Updated: 2022/01/11 17:40:56 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
 #include <string.h>
 
-char *ft_strchr (const char *s, int c)
+void *ft_memset(void *str, int c, size_t n)
 {
-	char *str;
+	unsigned char *str_copy;
+	int i;
 
-	str = (char *)s;
-	while (*str != c)
+	i = 0;
+	str_copy = (unsigned char *) str;
+	while(n--)
 	{
-		if (*str == '\0')
-		{
-			return (NULL);
-		}
-		str++;
+		str_copy[i] = c;
+		i++; 
 	}
-
-	return (str);
-}
-
-int main() {
-	const char str[] = "www.tutorialspoint.com";
-   const char ch = '.';\
-   	const char str2[] = "www.tutorialspoint.com";
-   const char ch2 = '.';
-   char *ret;
-   char *ret2;
-   ret = strchr(str, ch);
-
-   printf("String after |%c| is - |%s|\n", ch, ret);
-
-    ret2 = ft_strchr(str2, ch2);
-
-   printf("String after |%c| is - |%s|\n", ch2, ret2);
-
-
-
+	return (str_copy);
 }

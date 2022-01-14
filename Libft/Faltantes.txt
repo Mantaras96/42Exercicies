@@ -1,0 +1,21 @@
+• isalpha - R
+• isdigit - R
+• isalnum - R
+• isascii - R
+• isprint - R
+• strlen - R
+• memset - R
+• bzero - R
+• memcpy - R
+• memmove - R
+• strlcpy - R
+• strlcat  - R
+• toupper  - R
+• tolower  - R
+• strchr - R
+• strrchr -R
+• strncmp - R
+• memchr  - R
+• memcmp - R
+• strnstr - R
+• atoi - 

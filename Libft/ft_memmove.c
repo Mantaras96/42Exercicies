@@ -6,48 +6,27 @@
 /*   By: amantara <amantara@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 18:49:59 by amantara          #+#    #+#             */
-/*   Updated: 2022/01/11 17:40:56 by amantara         ###   ########.fr       */
+/*   Updated: 2022/01/16 11:09:25 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
+#include "libft.h"
 
-void *ft_memmove(void *str1, const void *str2, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*s1_copy;
-	unsigned char	*s2_copy;
 	size_t	i;
+	char	*dest;
+	char	*source;
 
-	s1_copy = (unsigned char *)str1;
-	s2_copy = (unsigned char *)str2;
 	i = 0;
-	while (i < n)
+	dest = (char *)dst;
+	source = (char *)src;
+	if (dest > source)
 	{
-
-		*(s1_copy + i) = *(s2_copy + i);
-		i++;
+		while (len--)
+			dest[len] = source[len];
 	}
-	return (s1_copy);
-}
-
-int main () {
-   char dest[] = "oldstring";
-   const char src[]  = "newstring";
-
-   char dest2[] = "oldstring";
-   const char src2[]  = "newstring";
-
-   printf("Before memmove dest = %s, src = %s\n", dest, src);
-   memmove(dest, src, 1);
-   printf("After memmove dest = %s, src = %s\n", dest, src);
-
-   ft_memmove(dest2, src2, 1);
-   printf("After memmove dest = %s, src = %s\n", dest2, src2);
-
-
-   return(0);
+	else if (dest < source)
+		ft_memcpy(dst, src, len);
+	return (dst);
 }

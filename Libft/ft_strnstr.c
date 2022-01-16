@@ -9,41 +9,35 @@
 /*   Updated: 2022/01/11 17:40:56 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
 
-char *ft_strnstr(const char	*big, const char *little, size_t len);D
+#include "libft.h"
+
+char	*ft_strnstr(const char	*str, const char *to_find, size_t len)
 {
-	char *str;
+	char 	*str_copy;
+	char	*find_copy;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
-	str = (char *)s;
-	while (*str != c)
+	str_copy = (char *) str;
+	find_copy = (char *) to_find;
+	i = 0;
+	if (find_copy[0] == '\0')
+		return (str_copy);
+	while (str_copy[i] && i < len)
 	{
-		if (*str == '\0')
+		j = 0;
+		k = i;
+		while (str_copy[k] == find_copy[j]
+			&& find_copy[j] && str_copy[k] && k < len)
 		{
-			return (NULL);
+			k++;
+			j++;
 		}
-		str++;
+		if (find_copy[j] == '\0')
+			return (&str_copy[i]);
+		i++;
 	}
-
-	return (str);
-}
-
-int main() {
-	const char str[] = "www.tutorialspoint.com";
-   const char ch = '.';\
-   	const char str2[] = "www.tutorialspoint.com";
-   const char ch2 = '.';
-   char *ret;
-   char *ret2;
-   ret = strchr(str, ch);
-
-   printf("String after |%c| is - |%s|\n", ch, ret);
-
-    ret2 = ft_strchr(str2, ch2);
-
-   printf("String after |%c| is - |%s|\n", ch2, ret2);
-
-
-
+	return (0);
 }

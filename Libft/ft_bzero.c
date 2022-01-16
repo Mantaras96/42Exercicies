@@ -6,35 +6,22 @@
 /*   By: amantara <amantara@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 18:49:59 by amantara          #+#    #+#             */
-/*   Updated: 2022/01/11 17:40:56 by amantara         ###   ########.fr       */
+/*   Updated: 2022/01/16 10:53:31 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
+#include "libft.h"
 
- void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *str_copy;
-	int i;
+	char	*str_copy;
+	size_t	i;
 
-	i = n;
-	str_copy = (unsigned char *) s;
-	while (str_copy[i])
+	i = 0;
+	str_copy = (char *) s;
+	while (i < n)
 	{
-		str_copy[i] = '\0';
-	}
-}
-
-int main() {
-	
-	char str[] = "www.tutorialspoint.com";
-	int n = 3;
-
-	ft_bzero(str, n);
-	printf("%s \n", str);
-	return (0);
+		str_copy[i] = 0;
+		i++;
+	}	
 }

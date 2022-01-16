@@ -6,24 +6,28 @@
 /*   By: amantara <amantara@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 18:49:59 by amantara          #+#    #+#             */
-/*   Updated: 2022/01/11 17:40:56 by amantara         ###   ########.fr       */
+/*   Updated: 2022/01/16 10:58:10 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
+#include "libft.h"
 
-int ft_toupper (int c)
+char	*ft_strdup(const char *s)
 {
-	int diferencia;
+	char	*ptr;
+	size_t	j;
 
-	diferencia = 32;
-	if (c >= 97 && c <= 122)
+	ptr = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (!ptr)
 	{
-		c = c - diferencia;
+		return (NULL);
 	}
-	return c;
+	j = 0;
+	while (s[j])
+	{
+		ptr[j] = s[j];
+		j++;
+	}
+	ptr[j] = '\0';
+	return (ptr);
 }

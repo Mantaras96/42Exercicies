@@ -9,41 +9,29 @@
 /*   Updated: 2022/01/11 17:40:56 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 #include <stdio.h>
 #include <string.h>
 
-int ft_strncmp(const char *str1, const char *str2, size_t n)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	char *str;
+	size_t			i;
+	unsigned char	*str1_copy;
+	unsigned char	*str2_copy;
 
-	str = (char *)s;
-	while (*str != c)
+	str1_copy = (unsigned char *)str1;
+	str2_copy = (unsigned char *)str2;
+	i = 0;
+	while (i <= n - 1 && str1_copy[i] && str2_copy[i])
 	{
-		if (*str == '\0')
+		if (str1_copy[i] != str2_copy[i])
 		{
-			return (NULL);
+			return (str1_copy[i] - str2_copy[i]);
 		}
-		str++;
+		i++;
 	}
-
-	return (str);
-}
-
-int main() {
-	const char str[] = "www.tutorialspoint.com";
-   const char ch = '.';\
-   	const char str2[] = "www.tutorialspoint.com";
-   const char ch2 = '.';
-   char *ret;
-   char *ret2;
-   ret = strchr(str, ch);
-
-   printf("String after |%c| is - |%s|\n", ch, ret);
-
-    ret2 = ft_strchr(str2, ch2);
-
-   printf("String after |%c| is - |%s|\n", ch2, ret2);
-
-
-
+	if (i != n)
+		return (str1_copy[i] - str2_copy[i]);
+	return (0);
 }

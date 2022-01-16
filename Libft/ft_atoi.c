@@ -29,7 +29,7 @@ int	max_long(long int sum, int signo)
 		return (-1);
 	else if (sum * signo < -2147483648)
 		return (0);
-	return(1);
+	return (1);
 }
 
 int	ft_atoi(const char *str1)

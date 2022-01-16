@@ -6,34 +6,33 @@
 /*   By: amantara <amantara@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 18:49:59 by amantara          #+#    #+#             */
-/*   Updated: 2022/01/11 17:40:56 by amantara         ###   ########.fr       */
+/*   Updated: 2022/01/16 10:58:10 by amantara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char	*str, const char *to_find, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	char	*str;
+	size_t	len;
 
-	i = 0;
-	if (to_find[i] == '\0')
-		return ((char *)str);
-	while (str[i] && i < len)
+	if (!s1 && !s2)
+		return (NULL);
+	else
 	{
-		j = 0;
-		k = i;
-		while (str[k] == to_find[j]
-			&& to_find[j] && str[k] && k < len)
-		{
-			k++;
-			j++;
-		}
-		if (to_find[j] == '\0')
-			return ((char *)&str[i]);
-		i++;
+		if (!s1)
+			return (ft_strdup(s2));
+		else if (!s2)
+			return (ft_strdup(s1));
 	}
-	return (0);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	if ((int)len < 0)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * len + 1);
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, (s1), ft_strlen(s1) + 1);
+	ft_strlcpy((str + ft_strlen(s1)), (s2), ft_strlen(s2) + 1);
+	return (str);
 }

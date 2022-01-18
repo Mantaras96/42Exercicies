@@ -18,8 +18,8 @@ int getStart(char const *s1, char const *set){
 
 	len = ft_strlen(s1);
 	i = 0;
-	while (i < len - 1){
-		if (ft_strchr(set, s1[i]))
+	while (i < len){
+		if (ft_strchr(set, s1[i]) == 0)
 			return (i);
 		i++;
 	}
@@ -32,12 +32,13 @@ int getEnd(char const *s1, char const *set){
 
 	len = ft_strlen(s1);
 	i = 0;
-	while (i < len - 1){
-		if (ft_strchr(set, s1[len - 1 - i]))
-			return (i);
+	while (i < len)
+	{
+		if (ft_strchr(set, s1[len - 1 - i]) == 0)
+			return (len - i);
 		i++;
 	}
-	return (i);	
+	return (len - i);	
 }
 
  char *ft_strtrim(char const *s1, char const *set)
@@ -46,21 +47,24 @@ int getEnd(char const *s1, char const *set){
 	int end;
 	char *str;
 
-	start = getStart(s1, set);
-	end = getEnd(s1, set);
 	if (s1 == NULL)
 		return (NULL);
 	if (set == NULL)
 		return (ft_strdup(s1));
+	start = getStart(s1, set);
+	end = getEnd(s1, set);
+	// printf("Start: %d", start);
+	// printf("End: %d", end);
+	
 	if (start >= end){
 		return (ft_strdup(""));
 	}
-
-	str = malloc(sizeof(char) * end - start + 1);
+	str = malloc(sizeof(char) * (end - start + 1));
 	if (!str){
 		return (NULL);
 	}
-	ft_strlcpy(str, s1 + start, start - end + 1);
+	// printf("End - start:%d", (end - start));
+	ft_strlcpy(str, s1 + start, end - start + 1);
 	return(str);
 }
 

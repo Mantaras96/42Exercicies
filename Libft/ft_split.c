@@ -68,18 +68,14 @@ char	*word_splited(const char *str, int start, int end)
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+void	write_word(char **split, char c, char const *s)
 {
-	char	**split;
 	size_t	i;
 	size_t	j;
 	int		i_copy;
 
 	i = 0;
 	j = 0;
-	split = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!split || !s)
-		return (0);
 	i_copy = -1;
 	while (i <= strlen(s))
 	{
@@ -90,8 +86,20 @@ char	**ft_split(char const *s, char c)
 			split[j++] = word_splited(s, i_copy, i);
 			i_copy = -1;
 		}
-		i++;
+	i++;
 	}
 	split[j] = 0;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**split;
+
+	if (!s)
+		return (0);
+	split = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!split)
+		return (0);
+	write_word(split, c, s);
 	return (split);
 }

@@ -20,6 +20,8 @@ int	ft_strncmp(const char *str1, const char *str2, size_t n)
 	unsigned char	*str1_copy;
 	unsigned char	*str2_copy;
 
+	if (n == 0)
+		return (0);
 	str1_copy = (unsigned char *)str1;
 	str2_copy = (unsigned char *)str2;
 	i = 0;

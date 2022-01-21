@@ -31,11 +31,15 @@ SRC		=	ft_isalpha.c \
 			ft_putchar_fd.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
-			ft_putnbr_fd.c \
+			ft_putnbr_fd.c
+
+BONUS	=	ft_lstnew.c
 			
 
 
 OBJECTS	=	$(SRC:%.c=%.o)
+
+BONUS_OBJS = $(BONUS:%.c=%.o)
 
 CC		=	@gcc
 CCFLAGS	=	-Wall -Werror -Wextra
@@ -54,4 +58,9 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
+
+bonus:
+	$(CC) $(CCFLAGS) -c $(BONUS) -I ./
+	@ar rc $(NAME) $(BONUS_OBJS) 
+	@echo "Done!"
 			

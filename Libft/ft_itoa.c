@@ -12,74 +12,67 @@
 
 #include "libft.h"
 
-size_t countChar(long number)
+size_t	count_char(long number)
 {
-	size_t size;
-	
+	size_t	size;
+
 	size = 0;
-	if (number == 0){
+	if (number == 0)
 		return (1);
-	}
-	if (number < 0){
+	if (number < 0)
+	{
 		number = number * -1;
 		size++;
 	}
-	while(number > 0){
+	while (number > 0)
+	{
 		number = number / 10;
 		size++;
 	}
-
 	return (size);
-
 }
 
-void convToChar(char *str, size_t size, long int number){
-	size_t i;
+void	conv_to_char(char *str, size_t size, long int number)
+{
+	size_t	i;
 
 	i = size;
-	if (number < 0){
+	if (number < 0)
 		str[0] = '-';
-	}
-	while(i > 0){
-		printf("Numero dividir: number: %ld -> %ld", number, (number % 10) + '0');
+	while (i > 0)
+	{
 		str[i] = (number % 10) + '0';
 		number = number / 10;
-		i--;  
+		i--;
 	}
-	
-	*(str + (size + 1)) = '\0'; 
+	*(str + (size + 1)) = '\0';
 }
 
-char *ft_itoa(int n){
-	
-	size_t size;
-	char *str;
-	long nbr;
+char	*ft_itoa(int n)
+{
+	size_t	size;
+	char	*str;
+	long	nbr;
 
-	printf("Numero: %d\n", n);
-	size = countChar(n);
-	printf("Size: %zu\n", size);
+	size = count_char(n);
 	str = malloc(sizeof(char) * (size + 1));
-	// if (!str){
-	// 	return (0);
-	// }
-	// convToChar(str, size, n);
-
-	// printf("Numero final:%s\n", str);
-	// return (str);
-	*(str + size--) = '\0';
+	if (!str)
+		return (0);
+	*(str + size) = '\0';
+	size--;
 	if (n < 0)
 		nbr = n * -1;
 	else
 		nbr = n;
 	while (nbr > 0)
 	{
-		*(str + size--) = nbr % 10 + '0';
+		*(str + size) = nbr % 10 + '0';
 		nbr /= 10;
+		size--;
 	}
 	if (size == 0 && str[1] == '\0')
 		*(str + size) = '0';
 	else if (size == 0 && str[1] != '\0')
 		*(str + size) = '-';
-	return(str);
+	return (str);
 }

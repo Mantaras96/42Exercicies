@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalpha.c                                          :+:      :+:    :+:   */
+/*   itoa.c                            	                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amantara <amantara@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,55 +12,32 @@
 
 #include "libft.h"
 
-int	getstart(char const *s1, char const *set)
+/*
+Aplica la función ’f’ a cada caracter de la string
+’s’ para crear la nueva string, resultado de
+aplicar sucesivas veces ’f’ (utilizando malloc(3)).
+*/
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	len;
-	int	i;
-
-	len = ft_strlen(s1);
-	i = 0;
-	while (i < len)
-	{
-		if (ft_strchr(set, s1[i]) == 0)
-			return (i);
-		i++;
-	}
-	return (i);
-}
-
-int	getend(char const *s1, char const *set)
-{
-	int	len;
-	int	i;
-
-	len = ft_strlen(s1);
-	i = 0;
-	while (i < len)
-	{
-		if (ft_strchr(set, s1[len - 1 - i]) == 0)
-			return (len - i);
-		i++;
-	}
-	return (len - i);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	int		start;
-	int		end;
 	char	*str;
+	size_t	i;
+	size_t	size;
 
-	if (s1 == NULL)
-		return (NULL);
-	if (set == NULL)
-		return (ft_strdup(s1));
-	start = getstart(s1, set);
-	end = getend(s1, set);
-	if (start >= end)
-		return (ft_strdup(""));
-	str = malloc(sizeof(char) * (end - start + 1));
+	if (!s || !f)
+	{
+		return (0);
+	}
+	size = ft_strlen(s);
+	str = malloc(sizeof(char) * size + 1);
 	if (!str)
-		return (NULL);
-	ft_strlcpy (str, s1 + start, end - start + 1);
+		return (0);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[i] = '\0';
 	return (str);
 }

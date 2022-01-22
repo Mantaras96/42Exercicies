@@ -45,10 +45,10 @@ int	ft_atoi(const char *str1)
 	signo = 1;
 	while (validate_char(str[i]) == 1)
 		i++;
-	while (str[i] == '-' || str[i] == '+' )
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			signo *= -1;
+			signo = -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')

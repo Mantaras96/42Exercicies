@@ -12,14 +12,18 @@
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*backup;
+	t_list	*bakcup;
+	t_list	*last;
 
-	backup = NULL;
-	if (!lst)
-		return (backup);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	if (!lst || !del)
+		return (NULL);
+	bakcup = *lst;
+	while (bakcup)
+	{
+		last = bakcup->next;
+		ft_lstdelone(bakcup, del);
+		bakcup = last;
+	}
 }

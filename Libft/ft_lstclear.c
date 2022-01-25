@@ -17,8 +17,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	t_list	*bakcup;
 	t_list	*last;
 
-	if (!lst || !del)
-		return (NULL);
 	bakcup = *lst;
 	while (bakcup)
 	{
@@ -26,4 +24,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		ft_lstdelone(bakcup, del);
 		bakcup = last;
 	}
+	*lst = NULL;
 }

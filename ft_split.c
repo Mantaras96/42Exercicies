@@ -12,22 +12,6 @@
 
 #include "libft.h"
 
-size_t	found_number_string(char const *s, char c)
-{
-	size_t	count;
-	size_t	i;
-
-	count = 1;
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			count++;
-		i++;
-	}
-	return (count);
-}
-
 static int	count_words(const char *str, char c)
 {
 	int	i;

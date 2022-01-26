@@ -33,3 +33,14 @@
 - [`ft_putstr_fd`](ft_putstr_fd.c)      - Output una string por el file descriptor indicado.
 - [`ft_putendl_fd`](ft_putendl_fd.c)	- Output una string por el file descriptor indicado seguido de un salto de linea.
 - [`ft_putnbr_fd`](ft_putnbr_fd.c)	    - Output un numero por el file descriptor indicado. 
+
+## Libft Bonus
+- [`ft_lstnew`](ft_lstnew.c)	            - Reserva con malloc(3) y devuelve un elemento nuevo.
+- [`ft_lstadd_front`](ft_lstadd_front.c)	- Añade el elemento ’new’ al principio de la lista.
+- [`ft_lstsize`](ft_lstsize.c)	          - Cuenta el número de elemento de una lista
+- [`ft_lstlast`](ft_lstlast.c)	          - Devuelve el último elemento de una lista.
+- [`ft_lstadd_back`](ft_lstadd_back.c)	  - Añade el elemento ’new’ al final de una lista.
+- [`ft_lstdelone`](ft_lstdelone.c)	      - Toma como parámetro un elemento y libera la memoria del contenido
+- [`ft_lstclear`](ft_lstclear.c)	        - Elimina y libera cada uno de los elementos de la lista dada
+- [`ft_lstiter`](ft_lstiter.c)	          - Itera la lista ’lst’ y aplica la función ’f’ al contenido de cada elemento.
+- [`ft_lstmap`](ft_lstmap.c)	            - Itera la lista ’lst’ y aplica la función ’f’ al contenido de cada elemento.

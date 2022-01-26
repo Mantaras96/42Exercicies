@@ -1,5 +1,15 @@
 # Libft
 
+## Makefile
+
+| Commando       	|  Accion 	|
+|----------------	|----------	|
+| `make`      	    | Compila .c y crea libft.a  	|
+| `make bonus`      | Compila los bonus y crea libft.a  	|
+| `make clean`      | Elimina .o. |
+| `make flcean`     | Elimina .o y libft.a.  	|
+| `make re`     	| Ejecuta el comando fclean y make.  	|
+
 ## Libft Part-1
 - [`ft_isalpha`](ft_isalpha.c)	        - Valida que el carácter de entrada es alfabético.
 - [`ft_isdigit`](ft_isdigit.c)          - Valida que el carácter de entrada es un dígito.
@@ -44,3 +54,7 @@
 - [`ft_lstclear`](ft_lstclear.c)	        - Elimina y libera cada uno de los elementos de la lista dada
 - [`ft_lstiter`](ft_lstiter.c)	          - Itera la lista ’lst’ y aplica la función ’f’ al contenido de cada elemento.
 - [`ft_lstmap`](ft_lstmap.c)	            - Itera la lista ’lst’ y aplica la función ’f’ al contenido de cada elemento.
+
+##
+[![forthebadge](https://forthebadge.com/images/badges/made-with-c.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)

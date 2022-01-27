@@ -13,9 +13,6 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
-# include <ctype.h>
-# include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -56,7 +53,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void 	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 //Methods file descriptor.
 void	ft_putchar_fd(char c, int fd);

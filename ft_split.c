@@ -61,7 +61,7 @@ void	write_word(char **split, char c, char const *s)
 	i = 0;
 	j = 0;
 	i_copy = -1;
-	while (i <= strlen(s))
+	while (i <= ft_strlen(s))
 	{
 		if (s[i] != c && i_copy < 0)
 			i_copy = i;

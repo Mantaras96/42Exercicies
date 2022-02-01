@@ -19,10 +19,12 @@
 */
 char	*ft_strchr(const char *s, int c)
 {
-	char	*str;
+	char			*str;
+	unsigned char	ch;
 
+	ch = (unsigned char) c;
 	str = (char *)s;
-	while (*str != c)
+	while (*str != ch)
 	{
 		if (*str == '\0')
 		{

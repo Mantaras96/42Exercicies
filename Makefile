@@ -6,7 +6,7 @@
 #    By: amantara <amantara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 16:03:39 by amantara          #+#    #+#              #
-#    Updated: 2022/02/04 16:06:05 by amantara         ###   ########.fr        #
+#    Updated: 2022/04/16 11:50:32 by amantara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,3 +82,4 @@ re: fclean all
 bonus:
 	gcc $(FLAGS) -c $(SRCSB) -I ./
 	ar rc $(NAME) $(OBJSB)
+	@touch $@

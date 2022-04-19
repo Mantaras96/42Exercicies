@@ -55,7 +55,7 @@
 - [`ft_lstiter`](ft_lstiter.c)	          - Itera la lista ’lst’ y aplica la función ’f’ al contenido de cada elemento.
 - [`ft_lstmap`](ft_lstmap.c)	            - Itera la lista ’lst’ y aplica la función ’f’ al contenido de cada elemento.
 
-[![AlbertM 42Project Score](https://badge42.herokuapp.com/api/project/amantara/Libft)](https://github.com/JaeSeoKim/badge42)
+[![amantara's 42 Libft Score](https://badge42.vercel.app/api/v2/cl1kskoh400110alh3fmdtt25/project/2454614)](https://github.com/JaeSeoKim/badge42)
 
 ##
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c.svg)](https://forthebadge.com)

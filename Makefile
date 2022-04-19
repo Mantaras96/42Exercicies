@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amantara <amantara@student.42.fr>          +#+  +:+       +#+         #
+#    By: albertmantaras <albertmantaras@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 16:03:39 by amantara          #+#    #+#              #
-#    Updated: 2022/02/04 16:06:05 by amantara         ###   ########.fr        #
+#    Updated: 2022/04/20 00:22:16 by albertmanta      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ OBJSB = $(SRCSB:.c=.o)
 
 FLAGS		= -Wall -Werror -Wextra
 
-$(NAME):
+$(NAME): $(OBJS) ./libft.h
 	gcc $(FLAGS) -c $(SRCS) -I ./
 	ar rc $(NAME) $(OBJS)
 

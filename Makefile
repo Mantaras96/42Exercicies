@@ -73,6 +73,7 @@ all: $(NAME)
 
 clean:
 	rm -f $(OBJS) $(OBJSB)
+	rm -f ./bonus
 
 fclean: clean
 	rm -f $(NAME)
